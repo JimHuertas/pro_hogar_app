@@ -17,8 +17,8 @@ class Labels extends StatelessWidget {
     required this.route,
     this.text = 'no-text',
     this.textReference = false,
-    this.colorLinkedText = Colors.white,
-    this.colorText = Colors.white,
+    this.colorLinkedText = Colors.black,
+    this.colorText = Colors.black,
     required this.textLinked
   }) : super(key: key);
 
@@ -34,13 +34,13 @@ class Labels extends StatelessWidget {
               fontWeight: FontWeight.w300)
           )
           : Container(),
-        const SizedBox(height: 10),
+        // const SizedBox(height: 10),
         GestureDetector(
           child: Text(textLinked, 
             style: TextStyle(
               color: colorLinkedText,
               fontSize: 16,
-              //fontWeight: FontWeight.bold
+              fontWeight: FontWeight.bold
             ),
           ),
           onTap: (){

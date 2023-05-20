@@ -48,7 +48,7 @@ class _TutorialPageState extends State<TutorialPage> {
                         )
                       : Navigator.push(
                         context, 
-                        FadeRoute(widget: const LoginPage()));
+                        FadeRoute(widget: LoginPage()));
                   }
                 ),
             ),
