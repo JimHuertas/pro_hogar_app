@@ -50,5 +50,22 @@ class ApiProviderProHogar{
       return [];
     }
   }
-
+  
+  Future<List<String>> categoryServiceList() async{
+    try {
+      Response response = await get(Uri.parse('$url/Servicio'));
+      if(response.statusCode == 200){
+        final List<dynamic> result = jsonDecode(response.body);
+        final serviceList = result.map((e) => ServicioModel.fromJson(e)).toList();
+        return serviceList.map((serv) => serv.servicioCategoria!).toSet().toList();
+      }else{
+        throw Exception(response.reasonPhrase);
+      }
+    } catch (e, stacktrace) {
+      if(kDebugMode){
+        print('Exception occured: $e stackTrace: $stacktrace');
+      }
+      return [];
+    }
+  }
 }

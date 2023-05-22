@@ -14,6 +14,10 @@ class ApiRepositoryProHogar{
   Future<List<NegocioModel>> fetchNegocioList(){
     return _provider.fetchNegocioList('get');
   }
+
+  Future<List<String>> cagetoryServiceList()async{
+    return _provider.categoryServiceList();
+  }
 }
 
 class NetworkError extends Error{}

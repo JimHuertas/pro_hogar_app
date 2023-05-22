@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
 
-import 'package:pro_hogar_app/bloc/pro_hogar_bloc.dart';
-import 'package:pro_hogar_app/model/servicio_model.dart';
 import 'package:pro_hogar_app/pages/home_page/widgets/card_service.dart';
 import 'package:pro_hogar_app/pages/home_page/widgets/drawer.dart';
+import 'package:pro_hogar_app/pages/home_page/widgets/seach_app_bar.dart';
+
+import '../../blocs/service_bloc/service_bloc.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -36,28 +37,28 @@ class _HomePageState extends State<HomePage> {
               icon: const Icon(Icons.notifications_none)
             )
           ],
-          title: const Text('Memes'),
+          title: const SearchAppBar(),
         ),
         body: BlocProvider(
-          create: (context) => ProHogarBloc(),
-          child: BlocListener<ProHogarBloc, ProHogarState>(
+          create: (context) => ServiceBloc(),
+          child: BlocListener<ServiceBloc, ServiceState>(
             listener: (context, state) {
-              if(state is ProHogarError){
+              if(state is ServiceError){
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text(state.message!))
                 );
               }
             },
-            child: BlocBuilder<ProHogarBloc, ProHogarState>(
+            child: BlocBuilder<ServiceBloc, ServiceState>(
               builder: (context, state) {
                 print(state);
-                if( state is ProHogarInitial){
-                  BlocProvider.of<ProHogarBloc>(context, listen: false).add(GetServicioList());
+                if( state is ServiceInitial){
+                  BlocProvider.of<ServiceBloc>(context, listen: false).add(GetServicioList());
                 }
-                if(state is ProHogarLoading){
+                if(state is ServiceLoading){
                   return Center(child: CircularProgressIndicator(color: color));
                 }
-                else if(state is ProHogarError){
+                else if(state is ServiceError){
                   return Container();
                 } else{
                   // return CardService(servicioID: 1, servicioNombre: 'servicioNombre', servicioDistrito: 'servicioDistrito', servicioCategoria: 'servicioCategoria', negocioNombre: 'negocioNombre', onTap: (){});
@@ -72,14 +73,14 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  _listOfService(BuildContext context, ProHogarState state){
-    if(state is ProHogarLoaded){
+  _listOfService(BuildContext context, ServiceState state){
+    if(state is ServiceLoaded){
       return ListView.builder(
         itemCount: state.servicioModel.length,
         itemBuilder: (context, index) => CardService(
           item: state.servicioModel[index],
           onTap: (){
-
+            
           },
         )
       );
