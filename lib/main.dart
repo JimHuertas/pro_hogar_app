@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         // primarySwatch: Colors.red,
         appBarTheme: const AppBarTheme(
           systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Colors.black, // <-- SEE HERE
+            // statusBarColor: Colors.black, // <-- SEE HERE
             statusBarIconBrightness: Brightness.dark, //<-- For Android SEE HERE (dark icons)
             statusBarBrightness: Brightness.dark, //<-- For iOS SEE HERE (dark icons)
           ),

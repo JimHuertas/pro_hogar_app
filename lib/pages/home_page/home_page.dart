@@ -7,10 +7,11 @@ import 'package:pro_hogar_app/bloc/pro_hogar_bloc.dart';
 import 'package:pro_hogar_app/model/servicio_model.dart';
 import 'package:pro_hogar_app/pages/home_page/widgets/card_service.dart';
 import 'package:pro_hogar_app/pages/home_page/widgets/drawer.dart';
+import 'package:pro_hogar_app/pages/perfil_servicio_page/perfil_servicio_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
-
+    
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -79,7 +80,11 @@ class _HomePageState extends State<HomePage> {
         itemBuilder: (context, index) => CardService(
           item: state.servicioModel[index],
           onTap: (){
-
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => PerfilServicioPage(model: state.servicioModel[index])
+            ));
           },
         )
       );
