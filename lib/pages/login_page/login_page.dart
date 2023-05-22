@@ -6,6 +6,7 @@ import '../widgets/logo.dart';
 import 'widgets/custom_imput.dart';
 
 class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +47,7 @@ class __FormState extends State<_Form> {
 
   @override
   Widget build(BuildContext context) {
-    double widthScreen = MediaQuery.of(context).size.width/2;
+    // double widthScreen = MediaQuery.of(context).size.width/2;
     double heightScreen = MediaQuery.of(context).size.height*1/100;
     TextEditingController emailCtrl = TextEditingController();
     TextEditingController passwordCtrl= TextEditingController();
@@ -104,7 +105,7 @@ class __FormState extends State<_Form> {
           ),
         ),
         const Text('Recordar cuenta'),
-        SizedBox(width: 25),
+        const SizedBox(width: 25),
         const Text('Olvidé mi contraseña')
       ],
     );
