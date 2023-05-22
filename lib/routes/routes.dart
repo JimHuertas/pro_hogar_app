@@ -6,9 +6,9 @@ import '../pages/home_page/home_page.dart';
 
 
 final Map<String, WidgetBuilder> appRoutes = {//const Page1Tutorial(),
-  'home' : (_) => const HomePage(),
+  'home' : (_) => HomePage(),
   'tutorial' : (_) => TutorialPage(),
-  'login' : (_) => const LoginPage()
+  'login' : (_) => LoginPage()
 };
 
 class FadeRoute extends PageRouteBuilder {
