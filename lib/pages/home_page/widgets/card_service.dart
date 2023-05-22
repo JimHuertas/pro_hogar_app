@@ -32,6 +32,7 @@ class _CardServiceState extends State<CardService> {
         ),
         trailing: _favoriteButton(),
         title: _titleList(),
+        onTap: widget.onTap,
       ),
     );
   }
