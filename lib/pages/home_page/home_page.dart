@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
 
 import 'package:pro_hogar_app/bloc/pro_hogar_bloc.dart';
-import 'package:pro_hogar_app/model/servicio_model.dart';
 import 'package:pro_hogar_app/pages/home_page/widgets/card_service.dart';
 import 'package:pro_hogar_app/pages/home_page/widgets/drawer.dart';
 import 'package:pro_hogar_app/pages/perfil_servicio_page/perfil_servicio_page.dart';

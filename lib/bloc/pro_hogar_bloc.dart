@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:pro_hogar_app/model/servicio_model.dart';
 import 'package:pro_hogar_app/resources/api_repository.dart';
 
 part 'pro_hogar_event.dart';

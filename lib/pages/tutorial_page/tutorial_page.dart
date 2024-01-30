@@ -30,7 +30,7 @@ class _TutorialPageState extends State<TutorialPage> {
           children: [
             PageView(
               controller: _pageController,
-              // physics: const NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               children: const [
                 Page1(),
                 Page2(),

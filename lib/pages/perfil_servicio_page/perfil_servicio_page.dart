@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pro_hogar_app/model/servicio_model.dart';
-import 'package:pro_hogar_app/pages/perfil_servicio_page/widgets/custom_container.dart';
 import 'package:pro_hogar_app/pages/perfil_servicio_page/widgets/custom_image.dart';
 import 'package:pro_hogar_app/pages/widgets/custom_buttom.dart';
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/custom_buttom.dart';
 import '../../widgets/label.dart';
 
 class Page1 extends StatelessWidget {
